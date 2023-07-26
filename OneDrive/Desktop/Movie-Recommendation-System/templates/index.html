@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <!--From https://codepen.io/frytyler/pen/EGdtg-->
+  <head>
+    <meta charset="UTF-8" />
+    <title>ML API</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arimo"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Hind:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- <script src="./static/js/jquery-3.6.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="./static/js/scripts.js"></script> -->
+    <script src="./ed.js"></script>
+    
+
+
+  </head>
+
+  <body>
+    <div class="login">
+      <h1>Movie Recomendation System</h1>
+      <form action="{{ url_for('predict')}}" method="post">
+        <input
+          type="text"
+          name="mood"
+          placeholder="Please describe your mood..."
+          required="required"
+          id="text"
+        />
+        
+        <button type="button" onclick="onClickPredict()" class="btn btn-primary btn-block btn-large">
+          Search
+        </button>
+        
+      </form>
+      <br />
+      <br />
+      <!-- {{ prediction_text }} -->
+    </div>
+    <div id="posterContainer"></div>
+  </body>
+</html>
